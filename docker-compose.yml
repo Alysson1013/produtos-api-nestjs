@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  db:
+    image: postgres
+    container_name: database_products
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=products
+    volumes:
+      - ./docker/db:/data/postgres
